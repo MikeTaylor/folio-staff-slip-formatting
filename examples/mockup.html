@@ -1,0 +1,70 @@
+<table border="1" style="width: 100%; border-collapse: collapse">
+  <colgroup>
+    <col style="width: 33.33%; background: none">
+    <col style="width: 33.33%; background: none">
+    <col style="width: 33.33%; background: none">
+  </colgroup>
+  <tr>
+    <td colspan="2">
+      <h1>Call nr</h1>
+    </td>
+    <td style="text-align: right">
+      Request date {{request.requestDate}}
+      <br />
+      Location {{item.effectiveLocationSpecific}}
+      <br />
+      Pickup Servicepoint {{request.servicePointPickup}}
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      Author {{item.primaryContributor}}
+      <br />
+      Title {{item.title}}
+      <br />
+      Year of publication, Edition, Physical description
+      {{item.datesOfPublication}}, {{item.editions}}, {{item.physicalDescriptions}}
+      <br />
+      Enumeration {{item.enumeration}}
+      <br />
+      Administrative note {{item.administrativeNotes}}
+    </td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      Patron comments: {{request.patronComments}}
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 33%; text-align: center">
+      <small>Item barcode</small>
+      {{item.barcodeImage}}
+    </td>
+    <td style="width: 33%; text-align: center">
+      <small>User barcode</small>
+      {{requester.barcodeImage}}
+    </td>
+    <td style="width: 33%; text-align: center">
+      <small>Instance barcode</small>
+      {{request.barcodeImage}}
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      {{borrower.patronGroup}}
+    </td>
+    <td>
+      {{item.accessionNumber}}
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <big>{{requester.lastName}}, {{requester.firstName}}, {{item.callNumber}}</big>
+    </td>
+    <td>
+      <big><b>Loan Type {{item.loanType}}</b></big>
+    </td>
+  </tr>
+</table>
