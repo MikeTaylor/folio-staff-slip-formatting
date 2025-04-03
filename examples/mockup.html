@@ -1,4 +1,4 @@
-<table border="1" style="width: 99%; border-collapse: collapse">
+<table border="1" style="width: 99%; border-collapse: collapse; margin-top: 0; padding-top: 0">
   <tr>
     <td colspan="2" style="width: 66%; border: 1px solid #e0e0e0">
       <span style="font-weight: bold; font-size: 200%">{{item.callNumber}}</span></td>
@@ -8,17 +8,17 @@
       {{request.servicePointPickup}}</td>
   </tr>
   <tr>
-    <td colspan="2" style="border: 1px solid #e0e0e0">
+    <td colspan="2" style="border: 1px solid #e0e0e0; width: 66%">
       {{item.primaryContributor}}
       {{item.title}}
       {{item.datesOfPublication}}, {{item.editions}}, {{item.physicalDescriptions}}
       {{item.enumeration}}
       {{item.administrativeNotes}}
     </td>
-    <td style="border: 1px solid #e0e0e0"></td>
+    <td style="border: 1px solid #e0e0e0; width: 33%"></td>
   </tr>
   <tr>
-    <td colspan="3" style="border: 1px solid #e0e0e0">
+    <td colspan="3" style="border: 1px solid #e0e0e0; width: 99%">
       Patron comments: {{request.patronComments}}
     </td>
   </tr>
@@ -34,15 +34,15 @@
       {{item.instanceHridImage}}</td>
   </tr>
   <tr>
-    <td colspan="2" style="border: 1px solid #e0e0e0">
+    <td colspan="2" style="border: 1px solid #e0e0e0; width: 66%">
       {{borrower.patronGroup}}</td>
-    <td style="border: 1px solid #e0e0e0">
+    <td style="border: 1px solid #e0e0e0; width: 33%">
       {{item.accessionNumber}}</td>
   </tr>
   <tr>
-    <td colspan="2" style="border: 1px solid #e0e0e0">
+    <td colspan="2" style="border: 1px solid #e0e0e0; width: 66%">
       <span style="; font-size: 150%">{{requester.lastName}}, {{requester.firstName}}, {{requester.middleName}}</span></td>
-    <td style="border: 1px solid #e0e0e0">
+    <td style="border: 1px solid #e0e0e0; width: 33%">
       <span style="; font-size: 150%"><b>{{item.loanType}}</b></span></td>
   </tr>
 </table>
