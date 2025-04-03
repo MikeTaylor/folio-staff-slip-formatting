@@ -5,27 +5,21 @@
     <col style="width: 33.33%; background: none">
   </colgroup>
   <tr>
-    <td colspan="2">
-      <h1>Call nr</h1>
+    <td colspan="2" style="width: 66%">
+      <h1 style="margin-left: 15px">Call nr</h1>
     </td>
-    <td style="text-align: right">
+    <td style="width: 33%; text-align: right">
       {{request.requestDate}}
-      <br />
       {{item.effectiveLocationSpecific}}
-      <br />
       {{request.servicePointPickup}}
     </td>
   </tr>
   <tr>
     <td colspan="2">
       {{item.primaryContributor}}
-      <br />
       {{item.title}}
-      <br />
       {{item.datesOfPublication}}, {{item.editions}}, {{item.physicalDescriptions}}
-      <br />
       {{item.enumeration}}
-      <br />
       {{item.administrativeNotes}}
     </td>
     <td>
@@ -47,7 +41,7 @@
     </td>
     <td style="width: 33%; text-align: center">
       <small>Instance barcode</small>
-      {{request.barcodeImage}}
+      {{item.instanceHridImage}}
     </td>
   </tr>
   <tr>
@@ -60,10 +54,10 @@
   </tr>
   <tr>
     <td colspan="2">
-      <big>{{requester.lastName}}, {{requester.firstName}}, {{item.callNumber}}</big>
+      <big>{{requester.lastName}}, {{requester.firstName}}, {{requester.middleName}}</big>
     </td>
     <td>
-      <big><b>Loan Type {{item.loanType}}</b></big>
+      <big><b>{{item.loanType}}</b></big>
     </td>
   </tr>
 </table>
