@@ -9,6 +9,7 @@
 * [Prototype](#prototype)
     * [Prototype approach](#prototype-approach)
     * [Prototype results](#prototype-results)
+* [Conclusion](#conclusion)
 
 
 
@@ -109,9 +110,22 @@ Rather than try to modify the `stripes-template-editor` library, which controls 
 
 First, the good news: Here is what I currently have displaying:
 
-<img src="../examples/Screenshot 2025-04-03 at 15.59.42.png" alt="Screenshot of template preview" />
+![Screenshot of template preview](../examples/screenshot.png)
 
 Superfically, this looks good, and a pretty good match for the Aleph slip that I'm using as a model. However:
 
 * It is not possible to supply a CSS stylesheet as part of the content, so all styling has to be done inline. As a result [the HTML for this template](../examples/mockup.html) is extremely ugly and rather awkward to maintain.
-* 
+* The formatted slip begins with about 500 pixels of vertical whitespace, which I have not been able to suppress. Instead, I have set the HTML `<table>`'s `margin-top` to -500 pixels, as the only way to get the slip to appear at the top of the table rather than half way down. As a result, when viewing the [the template](../examples/mockup.html) in a browser it appears empty, as all the content is above to the top of the window.
+* I have not been able to find a way to force the column widths to be in 1:1:1 ratio. In the screenshot, they work out that was because all the barcodes are the same width; but when the instance HRID barcode is used in the right column, as it ought to be, the column grows wider and overflows the table. (This happens even if the barcode is force-scaled down to 10% of its true size.)
+* Newline characters in the template are interpreted as line-breaks rather than being insignificant as in true HTML. As a result, I had to move the `</td>` closing tags up onto the lines of the data that they enclose, to avoid having blank lines at the end of each cell.
+
+More significantly, once an HTML template has been pasted into the editor, it can not be subsequently edited, as it appears in the editor as a sort-of-formatted version that hides the markup. To get the version in the screenshot above, I had to maintain the HTML template in my text editor and laboriously paste it into the editor for each iteration.
+
+
+## Conclusion
+
+In general, In trying to make this work, I had the feeling that I was always fighting against the system. That's why I said above that I think I picked the wrong approach for this prototype. If I have time, I might make another attempt, this time modifying my local copy of the `stripes-template-editor` library to allow me to edit the template as raw text. That should make _some_ of the awkwardness go away, though not all of it.
+
+But my interim conclusion is that if an HTML-based solution can be made to work, it will possibly remain awkward to use.
+
+
