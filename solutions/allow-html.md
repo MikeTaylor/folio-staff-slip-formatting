@@ -112,7 +112,7 @@ First, the good news: Here is what I currently have displaying:
 
 ![Screenshot of template preview](../examples/screenshot.png)
 
-Superfically, this looks good, and a pretty good match for the Aleph slip that I'm using as a model. However:
+Superfically, this looks good, and a pretty good match for [the Aleph slip that I'm using as a model](../examples/Aleph_FOLIO_circulation.jpg). However:
 
 * It is not possible to supply a CSS stylesheet as part of the content, so all styling has to be done inline. As a result [the HTML for this template](../examples/mockup.html) is extremely ugly and rather awkward to maintain.
 * The formatted slip begins with about 500 pixels of vertical whitespace, which I have not been able to suppress. Instead, I have set the HTML `<table>`'s `margin-top` to -500 pixels, as the only way to get the slip to appear at the top of the table rather than half way down. As a result, when viewing the [the template](../examples/mockup.html) in a browser it appears empty, as all the content is above to the top of the window.
