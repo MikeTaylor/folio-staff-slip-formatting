@@ -1,13 +1,11 @@
 <table border="1" style="width: 60%; border-collapse: collapse">
   <tr>
     <td colspan="2" style="width: 66%; border: 1px solid #e0e0e0">
-      <h1 style="margin-left: 15px">Call nr</h1>
-    </td>
+      <span style="font-weight: bold; font-size: 200%">Call nr</span></td>
     <td style="width: 33%; text-align: right; border: 1px solid #e0e0e0">
       {{request.requestDate}}
       {{item.effectiveLocationSpecific}}
-      {{request.servicePointPickup}}
-    </td>
+      {{request.servicePointPickup}}</td>
   </tr>
   <tr>
     <td colspan="2" style="border: 1px solid #e0e0e0">
@@ -17,8 +15,7 @@
       {{item.enumeration}}
       {{item.administrativeNotes}}
     </td>
-    <td style="border: 1px solid #e0e0e0">
-    </td>
+    <td style="border: 1px solid #e0e0e0"></td>
   </tr>
   <tr>
     <td colspan="3" style="border: 1px solid #e0e0e0">
@@ -28,31 +25,24 @@
   <tr>
     <td style="width: 33%; text-align: center; border: 1px solid #e0e0e0; transform: scale(0.6)">
       <span style="font-size: 167%">Item barcode</span>
-      {{item.barcodeImage}}
-    </td>
+      {{item.barcodeImage}}</td>
     <td style="width: 33%; text-align: center; border: 1px solid #e0e0e0; transform: scale(0.6)">
       <span style="font-size: 167%">User barcode</span>
-      {{requester.barcodeImage}}
-    </td>
+      {{requester.barcodeImage}}</td>
     <td style="width: 33%; text-align: center; border: 1px solid #e0e0e0; transform: scale(0.6)">
       <span style="font-size: 167%">Instance barcode</span>
-      {{item.instanceHridImage}}
-    </td>
+      {{item.instanceHridImage}}</td>
   </tr>
   <tr>
     <td colspan="2" style="border: 1px solid #e0e0e0">
-      {{borrower.patronGroup}}
-    </td>
+      {{borrower.patronGroup}}</td>
     <td style="border: 1px solid #e0e0e0">
-      {{item.accessionNumber}}
-    </td>
+      {{item.accessionNumber}}</td>
   </tr>
   <tr>
     <td colspan="2" style="border: 1px solid #e0e0e0">
-      <big>{{requester.lastName}}, {{requester.firstName}}, {{requester.middleName}}</big>
-    </td>
+      <span style="; font-size: 150%">{{requester.lastName}}, {{requester.firstName}}, {{requester.middleName}}</span></td>
     <td style="border: 1px solid #e0e0e0">
-      <big><b>{{item.loanType}}</b></big>
-    </td>
+      <span style="; font-size: 150%"><b>{{item.loanType}}</b></span></td>
   </tr>
 </table>
