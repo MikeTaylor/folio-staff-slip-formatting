@@ -1,62 +1,57 @@
-<table border="1" style="width: 100%; border-collapse: collapse">
-  <colgroup>
-    <col style="width: 33.33%; background: none">
-    <col style="width: 33.33%; background: none">
-    <col style="width: 33.33%; background: none">
-  </colgroup>
+<table border="1" style="width: 60%; border-collapse: collapse">
   <tr>
-    <td colspan="2" style="width: 66%">
+    <td colspan="2" style="width: 66%; border: 1px solid #e0e0e0">
       <h1 style="margin-left: 15px">Call nr</h1>
     </td>
-    <td style="width: 33%; text-align: right">
+    <td style="width: 33%; text-align: right; border: 1px solid #e0e0e0">
       {{request.requestDate}}
       {{item.effectiveLocationSpecific}}
       {{request.servicePointPickup}}
     </td>
   </tr>
   <tr>
-    <td colspan="2">
+    <td colspan="2" style="border: 1px solid #e0e0e0">
       {{item.primaryContributor}}
       {{item.title}}
       {{item.datesOfPublication}}, {{item.editions}}, {{item.physicalDescriptions}}
       {{item.enumeration}}
       {{item.administrativeNotes}}
     </td>
-    <td>
+    <td style="border: 1px solid #e0e0e0">
     </td>
   </tr>
   <tr>
-    <td colspan="3">
+    <td colspan="3" style="border: 1px solid #e0e0e0">
       Patron comments: {{request.patronComments}}
     </td>
   </tr>
   <tr>
-    <td style="width: 33%; text-align: center">
-      <small>Item barcode</small>
+    <td style="width: 33%; text-align: center; border: 1px solid #e0e0e0; transform: scale(0.6)">
+      <span style="font-size: 167%">Item barcode</span>
       {{item.barcodeImage}}
     </td>
-    <td style="width: 33%; text-align: center">
-      <small>User barcode</small>
+    <td style="width: 33%; text-align: center; border: 1px solid #e0e0e0; transform: scale(0.6)">
+      <span style="font-size: 167%">User barcode</span>
       {{requester.barcodeImage}}
     </td>
-    <td style="width: 33%; text-align: center">
-      <small>Instance barcode</small>
+    <td style="width: 33%; text-align: center; border: 1px solid #e0e0e0; transform: scale(0.6)">
+      <span style="font-size: 167%">Instance barcode</span>
       {{item.instanceHridImage}}
     </td>
   </tr>
   <tr>
-    <td colspan="2">
+    <td colspan="2" style="border: 1px solid #e0e0e0">
       {{borrower.patronGroup}}
     </td>
-    <td>
+    <td style="border: 1px solid #e0e0e0">
       {{item.accessionNumber}}
     </td>
   </tr>
   <tr>
-    <td colspan="2">
+    <td colspan="2" style="border: 1px solid #e0e0e0">
       <big>{{requester.lastName}}, {{requester.firstName}}, {{requester.middleName}}</big>
     </td>
-    <td>
+    <td style="border: 1px solid #e0e0e0">
       <big><b>{{item.loanType}}</b></big>
     </td>
   </tr>
