@@ -98,6 +98,7 @@ the slip is PUT to http://localhost:3010/staff-slips-storage/staff-slips/f838cda
 Note that the version of the template sent to storage has _already_ had the angle brackets escaped. This is very exciting, as it suggests that all the work is happening in the UI -- no quoting is being done on the back-end.
 
 
+
 ## Proposal
 
 We could extend the template object -- which currently has a title and the template itself -- with a boolean field (shown as a checkbox in the **Circulation** &rarr; **Settings** &rarr; **Staff slips** UI) indicating whether the template should be interpreted as HTML. This would default to false, so that the present behaviour would remain the default.
@@ -105,13 +106,16 @@ We could extend the template object -- which currently has a title and the templ
 It is possible, but not certain, that this would give us enough flexibility to format the staff slips in the way we need. At the least, access to HTML tables would allow some layout beyond just sequencing.
 
 
+
 ## Prototype 1
+
 
 ### Prototype 1 approach
 
 Rather than try to modify the `stripes-template-editor` library, which controls how temlates are edited and what data is supplied back to the setting page to submission to the FOLIO back-end, I decided to take a simpler approach: modify the way that forms are interpreted when they are displayed, so that escaped angle brackets `&lt;` and `&gt;` are translated back into `<` and `>`. My idea was that then it would be possible to add HTML tags to the templates, they would be saved like the `&lt;b&gt;` tags mentioned above, and we could display how the forms _would_ look had they been saved without the escaping of special characters.
 
 (I now think this approach was a mistake, for reasons that will become apparent.)
+
 
 ### Prototype 1 results
 
@@ -128,12 +132,15 @@ Superfically, this looks good, and a pretty good match for [the Aleph slip that 
 
 More significantly, once an HTML template has been pasted into the editor, it can not be subsequently edited, as it appears in the editor as a sort-of-formatted version that hides the markup. To get the version in the screenshot above, I had to maintain the HTML template in my text editor and laboriously paste it into the editor for each iteration.
 
+
 ### Prototype 1 conclusion
 
 In general, In trying to make this work, I had the feeling that I was always fighting against the system. That's why I said above that I think I picked the wrong approach for this prototype. If I have time, I might make another attempt, this time modifying my local copy of the `stripes-template-editor` library to allow me to edit the template as raw text. That should make _some_ of the awkwardness go away, though not all of it. (**Update.** I did, and the result is Prototype 2. Read on.)
 
 
+
 ## Prototype 2
+
 
 ### Prototype 2 approach
 
@@ -146,6 +153,7 @@ return (
 ```
 
 With this in place, it is now possible to straightforwardly edit raw HTML.
+
 
 ### Prototype 2 results
 
@@ -164,6 +172,7 @@ However, this approach still shares some weaknesses with the first prototype:
 
 And this approach, in its present very simple form, has one important _dis_advantage compared with Protoype 1: there is no UI for inserting tokens such as `{{item.title}}`: these must by typed or pasted in manually.
 
+
 ### Prototype 2 conclusion
 
 This seems much more promising than Prototype 1, because there is less "magic". In general, the HTML elements do what you expect them to do; and it's possible to iteratively refine a template.
@@ -175,5 +184,6 @@ If we take this route, we will need to do the following things (at least -- I ma
 * Modify `<TemplateEditor>` to accept a new optional boolean prop, which when true uses a `<TextArea>` rather than the Quill editor.
 * Enhance the `<TextArea>` code with the ability to insert tokens, as in the Quill editor.
 * Enhance the `<TextArea>` code with the ability to do a live preview of how the fomatted slip will look, as in the Quill editor.
+
 
 
