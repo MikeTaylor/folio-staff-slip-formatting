@@ -183,7 +183,7 @@ If we take this route, we will need to do the following things (at least -- I ma
 * Enhance the template-editing UI to provide a checkbox controlling this.
 * Modify `<TemplateEditor>` to accept a new optional boolean prop, which when true uses a `<TextArea>` rather than the Quill editor.
 * Enhance the `<TextArea>` code with the ability to insert tokens, as in the Quill editor.
-* Enhance the `<TextArea>` code with the ability to do a live preview of how the fomatted slip will look, as in the Quill editor.
+* Enhance the `<TextArea>` code with the ability to do a live preview of how the formatted slip will look, as in the Quill editor.
 
 
 
